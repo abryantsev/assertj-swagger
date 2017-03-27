@@ -59,6 +59,15 @@ if (!project.hasProperty('ossPassword')) ext.ossPassword = ''
 //}
 
 publishing {
+    repositories {
+        maven {
+          credentials {
+            username "user"
+            password "pass"
+          }
+          url "http://aws.famabc.de:9080/repository/snapshots/"
+        }
+    }
     publications {
         mavenJava(MavenPublication) {
             from components.java
